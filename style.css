@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+h1 {
+	margin-top: 0px;
+}
+#board { 
+    border-spacing: 0;      /*задаёт расстояние между границами ячеек в таблице*/
+    border-collapse: collapse;      /*устанавливает, как отображать границы вокруг ячеек таблицы*/
+}
+/*border-spacing не работает в случае, когда для таблицы установлено свойство border-collapse со значением collapse*/
+th {
+	text-align: center;
+	background-color: lavender;
+	width: 0.5%;
+}
+.letter {
+	height: 1%;
+}
+.black {
+	background-color: black;
+}
+.white {
+	background-color: white;
+}
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+td {
+  width: 2%;
+}
+#board td.cond1 {
+    background-image: url('point.png');
+}
+#board td.cond2 {
+    background-image: url('point_b.png');
+}

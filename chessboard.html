@@ -1,0 +1,143 @@
+<!DOCTYPE html> 
+<html lang="ru">
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anna-Sofia Ageenko">
+    <title>Шахматная доска</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head> 
+<body> 
+    <h1>Задание 1.1 (работа с DOM, события)</h1>
+<table  id="board" style="width: 680px; height: 680px">
+    <tr>
+        <th>8</th>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+    </tr>
+    <tr>
+        <th>7</th>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>  
+    </tr>
+    <tr>
+        <th>6</th>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+    </tr>
+    <tr>
+        <th>5</th>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>   
+    </tr>
+    <tr>
+        <th>4</th>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+    </tr>
+    <tr>
+        <th>3</th>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td> 
+    </tr>
+    <tr>
+        <th>2</th>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+    </tr>
+    <tr>
+        <th>1</th>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>  
+    </tr>
+    <tr>
+        <th class="letter"></th>
+        <th>A</th> 
+        <th>B</th>
+        <th>C</th>
+        <th>D</th>
+        <th>E</th>
+        <th>F</th>
+        <th>G</th>
+        <th>H</th>
+    </tr>
+</table>
+</body> 
+
+<script> 
+
+           function point (e){                              
+            var evt = window.event || e,                      
+            obj = evt.srcElement || evt.target;           
+            if (obj.tagName == 'table') return;               
+            if (obj.className == 'white'){
+                obj.className = 'cond1';
+            }
+            else if (obj.className == 'cond1'){
+                obj.className = 'white';
+            }
+            if (obj.className == 'black'){
+                obj.className = 'cond2';
+            }
+            else if (obj.className == 'cond2'){
+                obj.className = 'black';
+            }
+
+        }
+        onload = function (){
+            var trg = document.getElementById ('board');
+            if (document.addEventListener) trg.addEventListener ('click', point); 
+            else if (document.attachEvent) trg.attachEvent ('onclick', point);    
+            else trg.onclick = point;                                             
+        }
+
+</script> 
+</html>
